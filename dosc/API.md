@@ -55,6 +55,35 @@
   message: 'errrno !== 0 错误信息'
 }
 ```
+## 手机号验证
+
+### url
+
+`/api/user/code`
+
+### method
+
+`post`
+
+### request body
+
+```js
+{
+  username: ''
+}
+```
+
+### response body
+
+```js
+{
+  errno: 0,
+  message: 'errrno !== 0 错误信息'
+}
+```
+
+
+
 ## 忘记密码
 
 ### url 
@@ -123,6 +152,29 @@
       num: 0
     }
   }
+  message: 'errrno !== 0 错误信息'
+}
+```
+
+## 验证是否登录
+
+### url 
+
+`/api/user/test`
+
+### method 
+
+`get`
+
+### request body
+
+无
+
+### response body
+
+```js
+{
+  errno: 0,
   message: 'errrno !== 0 错误信息'
 }
 ```
@@ -314,6 +366,44 @@
 ### request body
 
 无
+
+### response body
+
+``` js
+{
+  errno: 0,
+  data: [
+    {
+      _id: '商店 id',
+      name: '商店名称',
+      imgUrl: '商店的图片 url',
+      sales: 10000, // 月售
+      expressLimit: 0, // 起送价格
+      slogan: 'VIP 尊享满 89 元减 4 元运费券'
+    }
+  ]
+  message: 'errno !== 0 错误信息'
+}
+```
+
+## 首页搜索商店
+
+### url 
+
+`/api/shop/search`
+
+### method 
+
+`post`
+
+### request body
+
+``` js
+{
+  searchValue: ''
+}
+
+```
 
 ### response body
 
