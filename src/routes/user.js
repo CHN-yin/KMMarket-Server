@@ -52,4 +52,9 @@ router.get('/info', loginCheck, async (ctx, next) => {
   ctx.body = new SuccessModel(data)
 })
 
+// 检验用户是否登录
+router.get('/test', loginCheck, async (ctx, next) => {
+  ctx.body = new SuccessModel('登录成功')
+})
+
 module.exports = router
