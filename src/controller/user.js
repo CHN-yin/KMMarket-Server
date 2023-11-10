@@ -41,7 +41,7 @@ const change = async (username, password) => {
  * @param {String} username 
  */
 const info = async (username) => {
-  return await User.findOne({ username })
+  return await User.findOne({ username }, { username: 1, imgUrl: 1, nickname: 1 })
 }
 
 module.exports = {
