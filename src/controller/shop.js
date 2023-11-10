@@ -15,7 +15,19 @@ const shopDetails = async (id) => {
   return await Shop.findOne({ _id:id })
 }
 
+/**
+ * 查询店铺
+ * @param {string} searchValue 
+ * @returns 
+ */
+const shopSearch = async (searchValue) => {
+  return await Shop.find({
+    name: { $regex: searchValue }
+  })
+}
+
 module.exports = {
   shopHot,
-  shopDetails
+  shopDetails,
+  shopSearch
 }
