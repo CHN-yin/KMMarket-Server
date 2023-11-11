@@ -1,6 +1,6 @@
 const router = require('koa-router')()
-const { SuccessModel } = require('../res-model/index')
-const productList = require('../controller/product')
+const { SuccessModel, ErrorModel } = require('../res-model/index')
+const { productList, searchProduct } = require('../controller/product')
 
 router.prefix('/api/shop')
 
@@ -12,4 +12,12 @@ router.get('/:id/products', async (ctx, next) => {
   ctx.body = new SuccessModel(data)
 })
 
+// 搜索（某个）商店的商品
+router.post('/:id/search', async (ctx, next) => {
+  const { id } = ctx.params
+  const { searchValue } = ctx.request.body
+  const data = await searchProduct(id, searchValue)
+  if (data.length === 0) return ctx.body = new ErrorModel(1008, '- 店铺暂无此商品 -')
+  ctx.body = new SuccessModel(data)
+})
 module.exports = router
