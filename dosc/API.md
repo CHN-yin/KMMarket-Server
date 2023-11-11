@@ -386,7 +386,7 @@
 }
 ```
 
-## 首页搜索商店
+## 首页搜索
 
 ### url 
 
@@ -494,6 +494,45 @@
   message: 'errno !== 0 错误信息'
 }
 ```
+
+## 搜索（某个）商店的商品
+
+### url 
+
+`/api/shop/:id/search`
+
+
+### method 
+
+`post`
+
+### request body
+
+```js
+{
+  searchValue: ''
+}
+```
+
+### response body
+
+``` js
+{
+  errno: 0,
+  data: [
+    {
+      _id: '商品的id',
+      name: '商品的名称',
+      imgUrl: 'xxx.png',
+      sales: 10, // 月售
+      price: 33.6, // 优惠价格
+      oldPrice: 53.6 // 原价
+    }
+  ]
+  message: 'errno !== 0 错误信息'
+}
+```
+
 
 ## 创建订单
 
