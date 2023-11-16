@@ -23,7 +23,19 @@ const searchProduct = async (id, searchValue) => {
   })
 }
 
+/**
+ * 根据id查询商品
+ * @param {string} id 
+ * @returns 
+ */
+const product = async (id) => {
+  return await Product.find({
+    _id: id
+  })
+}
+
 module.exports = {
   productList,
-  searchProduct
+  searchProduct,
+  product
 }
