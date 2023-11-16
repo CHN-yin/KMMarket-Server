@@ -533,6 +533,40 @@
 }
 ```
 
+## 根据商品id查询商品信息
+
+### url 
+
+`/api/shop/product/:id`
+
+
+### method 
+
+`get`
+
+### request body
+
+无
+
+### response body
+
+``` js
+{
+  errno: 0,
+  data: [
+    {
+      _id: '商品的id',
+      name: '商品的名称',
+      imgUrl: 'xxx.png',
+      sales: 10, // 月售
+      price: 33.6, // 优惠价格
+      oldPrice: 53.6 // 原价
+    }
+  ]
+  message: 'errno !== 0 错误信息'
+}
+```
+
 
 ## 创建订单
 
