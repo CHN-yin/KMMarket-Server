@@ -11,6 +11,7 @@ const Schema = mongoose.Schema({
   },
   shopId: String,
   shopName: String,
+  expressPrice: Number,
   isCanceled: {
     type: Boolean,
     default: false

@@ -9,7 +9,6 @@ router.prefix('/api/order')
 router.post('/', loginCheck, async (ctx, next) => {
   const { username } = ctx.session.userInfo
   const { body } = ctx.request
-  console.log(`body is ${body}`);
   try {
     const data = await orderCreate(username, body)
     ctx.body = new SuccessModel(data)

@@ -6,7 +6,7 @@ const { Address, Product, Order } = require('../models/index')
  * @param {Object} body 传参
  */
 const orderCreate = async (username, body = {}) => {
-  const { addressId, shopId, shopName, isCanceled = false, products = [] } = body
+  const { addressId, shopId, shopName, expressPrice, isCanceled = false, products = [] } = body
 
   // 获取地址
   const address = await Address.findById(addressId)
@@ -32,6 +32,7 @@ const orderCreate = async (username, body = {}) => {
     username,
     shopId,
     shopName,
+    expressPrice,
     isCanceled,
     address,
     products: productListAndOrderSales
